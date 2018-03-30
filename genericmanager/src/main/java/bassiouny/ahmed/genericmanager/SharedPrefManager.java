@@ -55,7 +55,7 @@ public class SharedPrefManager {
     public static long getLong(@NonNull String key){
         return sharedPref.getLong(key, 0);
     }
-    public static <T>  void setObject(@NonNull String key,@NonNull Class<T> t){
+    public static <T>  void setObject(@NonNull String key,@NonNull T t){
         Gson gson = new Gson();
         editor.putString(key,gson.toJson(t));
         editor.apply();
