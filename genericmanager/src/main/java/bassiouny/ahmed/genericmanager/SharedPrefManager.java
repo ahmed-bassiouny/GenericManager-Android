@@ -62,8 +62,8 @@ public class SharedPrefManager {
     }
     public static <T> T getObject(@NonNull String key,Class<T> t){
         Gson gson = new Gson();
-        String json = sharedPref.getString(key, "");
-        if(json.isEmpty())
+        String json = sharedPref.getString(key,"");
+        if(json.equals(""))
             return null;
         return gson.fromJson(json, t);
     }
