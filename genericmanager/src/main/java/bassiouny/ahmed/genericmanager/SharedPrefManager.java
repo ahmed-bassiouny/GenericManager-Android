@@ -65,4 +65,7 @@ public class SharedPrefManager {
         String json = sharedPref.getString(key, "");
         return gson.fromJson(json, t);
     }
+    public static void clearSharedPref(){
+        editor.clear();
+    }
 }
