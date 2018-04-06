@@ -74,9 +74,13 @@ public class SharedPrefManager {
 
     public static <T> T getObject(@NonNull String key, Class<T> t) {
         Gson gson = new Gson();
-        String json = sharedPref.getString(key, null);
-        if (json != null) return gson.fromJson(json, t);
-        else return null;
+        String json = sharedPref.getString(key, "");
+        try {
+            return gson.fromJson(json, t);
+        }catch (Exception e){
+            return null;
+        }
+
     }
 
     public static void clearSharedPref() {
