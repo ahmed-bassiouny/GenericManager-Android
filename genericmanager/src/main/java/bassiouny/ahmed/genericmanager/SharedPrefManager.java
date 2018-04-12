@@ -85,5 +85,6 @@ public class SharedPrefManager {
 
     public static void clearSharedPref() {
         editor.clear();
+        editor.apply();
     }
 }
