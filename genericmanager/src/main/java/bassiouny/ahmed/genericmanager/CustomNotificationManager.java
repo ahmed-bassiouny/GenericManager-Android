@@ -12,16 +12,16 @@ import android.support.v4.app.NotificationCompat;
 public class CustomNotificationManager {
 
 
-    private NotificationManager mNotificationManager;
-    private NotificationCompat.Builder mBuilder;
-    private CustomNotificationManager notificationManager;
+    private static NotificationManager mNotificationManager;
+    private static NotificationCompat.Builder mBuilder;
+    private static CustomNotificationManager notificationManager;
 
     private CustomNotificationManager() {
     }
 
     // init notification manager
     // init notification builder , custom notification manager
-    public CustomNotificationManager getInstance(Context context) {
+    public static CustomNotificationManager getInstance(Context context) {
         if (mBuilder == null || mNotificationManager == null || notificationManager == null) {
             notificationManager = new CustomNotificationManager();
             mBuilder = new NotificationCompat.Builder(context, "channel_id");
