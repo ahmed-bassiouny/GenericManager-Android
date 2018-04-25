@@ -3,6 +3,7 @@ package bassiouny.ahmed.genericmanager;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -32,7 +33,7 @@ public class DateTimeManager {
     }
 
     public static long getCurrentTimeStamp() {
-        return System.currentTimeMillis() / 1000;
+        return Calendar.getInstance().getTimeInMillis();
     }
 
     public static Date convertStringToDate(String date, String strFormat) {
