@@ -2,6 +2,7 @@ package bassiouny.ahmed.genericmanager;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.support.v4.app.NotificationCompat;
 
@@ -41,6 +42,10 @@ public class CustomNotificationManager {
 
     public void setIcon(int icon) {
         mBuilder.setSmallIcon(icon);
+    }
+
+    public void setContentIntent(PendingIntent pendingIntent) {
+        mBuilder.setContentIntent(pendingIntent);
     }
 
     public void show(int notificationId) {
