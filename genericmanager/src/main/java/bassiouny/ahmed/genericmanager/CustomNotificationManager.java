@@ -47,7 +47,9 @@ public class CustomNotificationManager {
     public void setContentIntent(PendingIntent pendingIntent) {
         mBuilder.setContentIntent(pendingIntent);
     }
-
+    public void removeNotificationAfterClick() {
+        mBuilder.setAutoCancel(true);
+    }
     public void show(int notificationId) {
         mNotificationManager.notify(notificationId, mBuilder.build());
     }
